@@ -8,27 +8,27 @@ lscpu  gathers  CPU architecture information from sysfs, /proc/cpuinfo and any a
 ```Architecture:          x86_64
 CPU op-mode(s):        32-bit, 64-bit
 Byte Order:            Little Endian
-CPU(s):                4
-On-line CPU(s) list:   0-3
+CPU(s):                1
+On-line CPU(s) list:   0
 Thread(s) per core:    1
-Core(s) per socket:    4
+Core(s) per socket:    1
 Socket(s):             1
 NUMA node(s):          1
 Vendor ID:             GenuineIntel
 CPU family:            6
-Model:                 79
-Model name:            Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
-Stepping:              1
-CPU MHz:               2300.009
-BogoMIPS:              4600.10
-Hypervisor vendor:     Xen
+Model:                 42
+Model name:            Intel(R) Core(TM) i5-2450M CPU @ 2.50GHz
+Stepping:              7
+CPU MHz:               2393.187
+BogoMIPS:              4786.37
+Hypervisor vendor:     Innotek GmbH
 Virtualization type:   full
 L1d cache:             32K
-L1i cache:             32K
-L2 cache:              256K
-L3 cache:              46080K
-NUMA node0 CPU(s):     0-3
-Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 h lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_x f16c rdrand hypervisor lahf_lm abm invpcid_single fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt 
+L1d cache:             32K
+L2d cache:             6144K
+NUMA node0 CPU(s):     0
+Flags:                 fpu vme de pse tsc msr pae mce cx8         apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse         sse2 syscall nx rdtscp lm constant_tsc rep_good nopl eager        fpu pni monitor ssse3 lahf_lm
+
 ```
 
 ## Features
@@ -68,3 +68,12 @@ Gather CPU data for a Linux instance other than the instance from which the lscp
 - **-x,** --hex Use hexadecimal masks for CPU sets (for example 0x3). The default is to print the sets in list format (for example 0,1).
 - **-V,** --version Display version information and exit.
 
+### Practice
+
+The below mentioned command will show the output of no of cpu and socket
+```
+Input command :- #lscpu -e=CPU,SOCKET
+
+Output :- CPU SOCKET
+            0   0
+```
